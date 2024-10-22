@@ -25,11 +25,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email">E-Posta</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi giriniz">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi giriniz" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Şifre</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi giriniz.">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi giriniz." required>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Giriş</button>
                         </form>

@@ -61,11 +61,7 @@
 
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <x-dropdown-link :href="route('logout')"
-                                            onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
-                                       <i class="ri-shut-down-line align-middle me-1 text-danger"> Çıkış</i>
-                                    </x-dropdown-link>
+                                    <center><button type="button" class="btn btn-link text-danger"> <i class="ri-shut-down-line align-middle me-1 text-danger"> </i> Çıkış</button></center>
                                 </form>
                             </div>
                         </div>

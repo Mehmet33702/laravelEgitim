@@ -27,19 +27,19 @@
                         @csrf
                             <div class="form-group">
                                 <label for="name">Ad Soyad</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Adınız ve Soyadınızı giriniz">
+                                <input type="text" class="form-control" id="name" name="name" required placeholder="Adınız ve Soyadınızı giriniz">
                             </div>
                             <div class="form-group">
                                 <label for="email">E-Posta Adresi</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi giriniz">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="E-Posta adresinizi giriniz">
                             </div>
                             <div class="form-group">
                                 <label for="password">Şifre</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi giriniz">
+                                <input type="password" class="form-control" id="password" name="password" required placeholder="Şifrenizi giriniz">
                             </div>
                             <div class="form-group">
                                 <label for="password_confirmation">Şifreyi Onayla</label>
-                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Şifrenizi tekrar giriniz">
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required placeholder="Şifrenizi tekrar giriniz">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Kayıt</button>
                         </form>

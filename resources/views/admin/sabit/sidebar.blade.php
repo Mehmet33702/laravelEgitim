@@ -2,8 +2,6 @@
 
                 <div data-simplebar class="h-100">
 
-
-
                     <!--- Sidemenu -->
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->

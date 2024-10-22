@@ -32,7 +32,7 @@
 
                             <div class="form-group">
                                 <label for="email">E-Posta Adresi</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi girin">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="E-Posta adresinizi girin">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block"><i class="mail_outline"></i>   Şifre Sıfırlama Bağlantısı Gönder</button>
                         </form>

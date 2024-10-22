@@ -34,15 +34,15 @@
 
                             <div class="form-group">
                                 <label for="email">E-posta Adresi</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi giriniz">
+                                <input type="email" class="form-control" id="email" name="email" value="{{ $request->email }}" required placeholder="E-Posta adresinizi giriniz">
                             </div>
                             <div class="form-group">
                                 <label for="password">Şifre</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Yeni Şifrenizi giriniz">
+                                <input type="password" class="form-control" id="password" name="password" required placeholder="Yeni Şifrenizi giriniz">
                             </div>
                             <div class="form-group">
                                 <label for="password_confirmation">Şifre Tekrar</label>
-                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Yeni Şifreyi tekrar giriniz">
+                                <input type="password" class="form-control" id="password_confirmation" required name="password_confirmation" placeholder="Yeni Şifreyi tekrar giriniz">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-user-lock"></i>   Şifre Sıfırla</button>
                         </form>
