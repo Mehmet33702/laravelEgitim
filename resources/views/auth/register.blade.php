@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üyelik Kayıt Formu</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:gray">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -25,25 +26,25 @@
                         <form method="POST" action="{{ route('register') }}">
                         @csrf
                             <div class="form-group">
-                                <label for="name">Ad Soyad :</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Ad Soyadınızı giriniz">
+                                <label for="name">Ad Soyad</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Adınız ve Soyadınızı giriniz">
                             </div>
                             <div class="form-group">
-                                <label for="email">E-Mail Adresi :</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail adresinizi giriniz">
+                                <label for="email">E-Posta Adresi</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi giriniz">
                             </div>
                             <div class="form-group">
-                                <label for="password">Şifre :</label>
+                                <label for="password">Şifre</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi giriniz">
                             </div>
                             <div class="form-group">
-                                <label for="password_confirmation">Şifreyi Onayla :</label>
+                                <label for="password_confirmation">Şifreyi Onayla</label>
                                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Şifrenizi tekrar giriniz">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Kayıt</button>
                         </form>
                         <div class="text-center mt-3">
-                            <a href="{{ route('login') }}" class="d-block">Üyeliğiniz var ise giriş yapınız.</a>
+                            <a href="{{ route('login') }}" class="d-block"><i class="fas fa-user-alt"></i> Zaten Hesabınız Var Mı? Giriş Yapınız.</a>
                         </div>
                     </div>
                 </div>

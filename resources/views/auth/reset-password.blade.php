@@ -1,39 +1,62 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('password.store') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şifre Sıfırlama</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body style="background-color:gray">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Şifrenizi mi unuttunuz?</h3>
+                        <p style="text-align: justify;">Sorun değil. Sadece bize e-posta adresinizi bildirin, size yeni bir şifre seçmenize olanak sağlayacak bir şifre sıfırlama bağlantısı gönderelim.</p>
+                            <!-- Session Status -->
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                            @session('status')
+                               <div class="card alert-success"> {{ ' e-Posta gönderilmiştir. e-Posta adresinizi kontrol ediniz.' }}</div>
+                            @endsession
+                            @if($errors)
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            @endif
+                            <form method="POST" action="{{ route('password.store') }}">
+                                @csrf
+                             <!-- Password Reset Token -->
+                            <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('E-Posta')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <div class="form-group">
+                                <label for="email">E-posta Adresi</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Posta adresinizi giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Şifre</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Yeni Şifrenizi giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="password_confirmation">Şifre Tekrar</label>
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Yeni Şifreyi tekrar giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-user-lock"></i>   Şifre Sıfırla</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Şifre')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Tekrar Şifre')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Şifre Sıfırla') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
