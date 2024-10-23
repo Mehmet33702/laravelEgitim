@@ -8,7 +8,15 @@
             {{ __("Update your account's profile information and email address.") }}
         </p>
     </header>
-
+        <div class="card-body">
+        @if($errors)
+        <ul>
+            @foreach ($errors->all() as $error)
+        <li> <div class="bg-danger"> {{ $error }} </div></li>
+            @endforeach
+        </ul>
+        @endif
+        </div>
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
@@ -18,15 +26,14 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+            <label for="name">Ad Soyad</label>
+            <input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name">
+
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+            <label for="name">E-Mail</label>
+            <input id="email" name="email" type="text" class="mt-1 block w-full" :value="old('email', $user->email)" required autofocus autocomplete="username">
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
@@ -48,7 +55,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <button class="btn btn-primary">{{ __('Save') }}</button>
 
             @if (session('status') === 'profile-updated')
                 <p

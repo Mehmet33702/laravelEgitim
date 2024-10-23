@@ -58,11 +58,12 @@
                                 <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end mt-1">11</span><i class="ri-settings-2-line align-middle me-1"></i> Settings</a>
                                 <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle me-1"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
-
+                                <a class="dropdown-item" href="{{ route('logout') }}"><i class="ri-shut-down-line align-middle me-1"></i> Çıkış</a>
+                                <center>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <center><button type="button" class="btn btn-link text-danger"> <i class="ri-shut-down-line align-middle me-1 text-danger"> </i> Çıkış</button></center>
-                                </form>
+                                   <button type="button" class="btn btn-outline-danger"> <i class="ri-shut-down-line align-middle me-1 text-danger"> </i> Çıkış</button>
+                                </form></center>
                             </div>
                         </div>
 

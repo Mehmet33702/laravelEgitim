@@ -19,7 +19,7 @@
                         @if($errors)
                         <ul>
                             @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                           <li> <div class="bg-danger"> {{ $error }} </div></li>
                             @endforeach
                         </ul>
                         @endif
